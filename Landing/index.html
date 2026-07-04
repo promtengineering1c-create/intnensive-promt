@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GreenLeaf Innovations — Многоразовые биоразлагаемые пакеты</title>
+  <meta name="description" content="Экологичные многоразовые пакеты для дома. Биоразлагаемая альтернатива пластику. Закажите пробный набор уже сегодня.">
+  <meta name="keywords" content="биоразлагаемые пакеты, многоразовые пакеты, экотовары, зеленый пакет, эко упаковка">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="GreenLeaf Innovations — Многоразовые биоразлагаемые пакеты">
+  <meta property="og:description" content="Экологичные многоразовые пакеты для дома. Биоразлагаемая альтернатива пластику.">
+  <meta property="og:type" content="website">
+  <link rel="canonical" href="https://greenleaf-innovations.ru/">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      color: #333; background: #fff; line-height: 1.6; -webkit-font-smoothing: antialiased;
+    }
+    img { max-width: 100%; height: auto; display: block; }
+    .container { max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+
+    /* Nav */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(255,255,255,.95); backdrop-filter: blur(8px);
+      border-bottom: 1px solid #e8e8e8;
+    }
+    nav .container { display: flex; align-items: center; justify-content: space-between; height: 60px; }
+    .logo { font-weight: 800; font-size: 1.25rem; color: #2e7d32; letter-spacing: -.5px; }
+    .logo span { color: #4CAF50; }
+    .nav-links { display: flex; gap: 24px; list-style: none; }
+    .nav-links a { text-decoration: none; color: #555; font-size: .9rem; font-weight: 500; transition: color .2s; }
+    .nav-links a:hover { color: #4CAF50; }
+
+    /* Sections */
+    section { padding: 80px 0; }
+    h2 { font-size: 2rem; text-align: center; margin-bottom: 48px; color: #222; }
+    .accent { color: #4CAF50; }
+
+    /* Hero */
+    .hero {
+      padding: 120px 0 80px; background: linear-gradient(135deg, #f0faf0 0%, #fff 50%, #f0faf0 100%);
+      text-align: center;
+    }
+    .hero h1 { font-size: 2.6rem; line-height: 1.2; color: #1b5e20; margin-bottom: 16px; }
+    .hero p { font-size: 1.15rem; color: #555; max-width: 560px; margin: 0 auto 32px; }
+    .hero-badge {
+      display: inline-block; background: #e8f5e9; color: #2e7d32; padding: 6px 16px; border-radius: 20px;
+      font-size: .85rem; font-weight: 600; margin-bottom: 20px;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-block; padding: 14px 36px; border-radius: 8px; font-size: 1rem;
+      font-weight: 600; text-decoration: none; cursor: pointer; border: none; transition: all .25s;
+    }
+    .btn-primary { background: #4CAF50; color: #fff; }
+    .btn-primary:hover { background: #388e3c; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(76,175,80,.35); }
+    .btn-secondary { background: transparent; color: #4CAF50; border: 2px solid #4CAF50; }
+    .btn-secondary:hover { background: #4CAF50; color: #fff; }
+
+    /* Problem */
+    .problem { background: #f5f5f5; }
+    .problem-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+    .problem-icon { font-size: 4rem; text-align: center; }
+    .problem h3 { font-size: 1.4rem; margin-bottom: 12px; color: #222; }
+    .stat-cards { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; margin-top: 40px; }
+    .stat-card { background: #fff; border-radius: 12px; padding: 24px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,.06); }
+    .stat-num { font-size: 2rem; font-weight: 800; color: #4CAF50; }
+    .stat-label { font-size: .85rem; color: #666; margin-top: 4px; }
+
+    /* Solution */
+    .solution-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+    .solution-img { background: #e8f5e9; border-radius: 50%; width: 320px; height: 320px; display: flex; align-items: center; justify-content: center; margin: 0 auto; font-size: 6rem; }
+
+    /* Benefits */
+    .benefits { background: #f5f5f5; }
+    .benefits-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 28px; }
+    .benefit-card {
+      background: #fff; border-radius: 16px; padding: 32px 24px; text-align: center;
+      box-shadow: 0 2px 12px rgba(0,0,0,.05); transition: transform .25s;
+    }
+    .benefit-card:hover { transform: translateY(-4px); }
+    .benefit-icon { font-size: 2.5rem; margin-bottom: 16px; }
+    .benefit-card h3 { font-size: 1.15rem; margin-bottom: 8px; color: #222; }
+    .benefit-card p { font-size: .9rem; color: #666; }
+
+    /* Audience */
+    .audience { text-align: center; }
+    .audience p { max-width: 600px; margin: 0 auto 32px; font-size: 1.1rem; color: #555; }
+    .audience-list { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; }
+    .audience-tag {
+      background: #e8f5e9; color: #2e7d32; padding: 10px 24px; border-radius: 30px;
+      font-weight: 500; font-size: .95rem;
+    }
+
+    /* Form */
+    .form-section { background: linear-gradient(135deg, #1b5e20, #2e7d32); color: #fff; }
+    .form-section h2 { color: #fff; }
+    .form-container { max-width: 520px; margin: 0 auto; }
+    .form-group { margin-bottom: 20px; }
+    .form-group label { display: block; font-weight: 500; margin-bottom: 6px; font-size: .9rem; }
+    .form-group input {
+      width: 100%; padding: 14px 16px; border-radius: 8px; border: 2px solid transparent;
+      font-size: 1rem; outline: none; transition: border-color .2s; background: #fff;
+    }
+    .form-group input:focus { border-color: #81c784; }
+    .form-group input.error { border-color: #ef5350; }
+    .form-group .error-msg { color: #ffcdd2; font-size: .8rem; margin-top: 4px; display: none; }
+    .form-group .error-msg.show { display: block; }
+    .form-container .btn { width: 100%; margin-top: 8px; }
+    .form-note { text-align: center; font-size: .8rem; opacity: .7; margin-top: 12px; }
+
+    /* Toast */
+    .toast {
+      position: fixed; bottom: 32px; left: 50%; transform: translateX(-50%) translateY(80px);
+      background: #1b5e20; color: #fff; padding: 16px 32px; border-radius: 12px;
+      font-weight: 600; opacity: 0; transition: all .4s; pointer-events: none; z-index: 200;
+      box-shadow: 0 8px 32px rgba(0,0,0,.2);
+    }
+    .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+    /* Footer */
+    footer { background: #1b5e20; color: rgba(255,255,255,.7); padding: 24px 0; text-align: center; font-size: .85rem; }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+      section { padding: 56px 0; }
+      h2 { font-size: 1.6rem; margin-bottom: 32px; }
+      .hero h1 { font-size: 1.8rem; }
+      .hero p { font-size: 1rem; }
+      .hero { padding: 100px 0 56px; }
+      .problem-grid, .solution-grid { grid-template-columns: 1fr; gap: 24px; }
+      .stat-cards { grid-template-columns: 1fr; gap: 12px; }
+      .benefits-grid { grid-template-columns: 1fr; gap: 16px; }
+      .solution-img { width: 200px; height: 200px; font-size: 4rem; }
+      .nav-links { display: none; }
+      .audience-list { gap: 10px; }
+      .audience-tag { font-size: .85rem; padding: 8px 18px; }
+    }
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .benefits-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="container">
+    <div class="logo">GreenLeaf<span>🌿</span></div>
+    <ul class="nav-links">
+      <li><a href="#problem">Проблема</a></li>
+      <li><a href="#solution">Решение</a></li>
+      <li><a href="#benefits">Преимущества</a></li>
+      <li><a href="#form">Заказать</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="hero" id="hero">
+  <div class="container">
+    <span class="hero-badge">🌱 100% биоразлагаемо</span>
+    <h1>Экологичные многоразовые пакеты для дома</h1>
+    <p>Замените обычный пластик на безопасную альтернативу, которая разлагается за 180 дней и выдерживает до 50 использований.</p>
+    <a href="#form" class="btn btn-primary">Заказать пробный набор</a>
+  </div>
+</section>
+
+<section class="problem" id="problem">
+  <div class="container">
+    <h2>Пластик убивает планету</h2>
+    <div class="problem-grid">
+      <div>
+        <p style="margin-bottom:16px;color:#555;font-size:1.05rem;">
+          Каждую минуту в мире покупают <strong>1 миллион</strong> пластиковых пакетов.
+          Средний срок использования одного пакета — <strong>12 минут</strong>, а разлагается он до <strong>400 лет</strong>.
+        </p>
+        <p style="color:#555;font-size:1.05rem;">
+          К 2050 году в океане пластика будет больше, чем рыбы. Пора менять привычки.
+        </p>
+      </div>
+      <div class="problem-icon">🌍💔</div>
+    </div>
+    <div class="stat-cards">
+      <div class="stat-card">
+        <div class="stat-num">400 лет</div>
+        <div class="stat-label">разлагается пакет</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">12 мин</div>
+        <div class="stat-label">среднее использование</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">8 млн т</div>
+        <div class="stat-label">пластика в океане в год</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="solution" id="solution">
+  <div class="container">
+    <h2>Наше <span class="accent">решение</span></h2>
+    <div class="solution-grid">
+      <div class="solution-img">🌿</div>
+      <div>
+        <h3 style="font-size:1.3rem;margin-bottom:12px;color:#222">Безопасная альтернатива пластику</h3>
+        <p style="color:#555;margin-bottom:16px;">
+          Наши пакеты созданы из растительных компонентов (кукурузный крахмал, PLA). Они не уступают
+          обычным пакетам по прочности, но полностью разлагаются в компосте за 180 дней без вреда для природы.
+        </p>
+        <p style="color:#555;margin-bottom:24px;">
+          Ты используешь их месяцами — природа перерабатывает за полгода.
+        </p>
+        <a href="#form" class="btn btn-secondary">Попробовать</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="benefits" id="benefits">
+  <div class="container">
+    <h2>Почему выбирают нас</h2>
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <div class="benefit-icon">♻️</div>
+        <h3>Биоразлагаемые</h3>
+        <p>Разлагаются за 180 дней в компосте, не оставляя микропластика.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">💪</div>
+        <h3>Многоразовые</h3>
+        <p>Выдерживают до 50 использований и нагрузку до 8 кг.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">🧼</div>
+        <h3>Удобные</h3>
+        <p>Моются, складываются в карман и подходят для любых покупок.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="audience" id="audience">
+  <div class="container">
+    <h2>Для кого этот продукт</h2>
+    <p>Для всех, кто хочет заботиться об экологии без лишних хлопот и переплат.</p>
+    <div class="audience-list">
+      <span class="audience-tag">🏡 Семьи с детьми</span>
+      <span class="audience-tag">🛒 Осознанные покупатели</span>
+      <span class="audience-tag">🌍 Экоактивисты</span>
+      <span class="audience-tag">🎒 Студенты</span>
+      <span class="audience-tag">🏢 Офисные сотрудники</span>
+    </div>
+  </div>
+</section>
+
+<section class="form-section" id="form">
+  <div class="container">
+    <h2>Закажите пробный набор</h2>
+    <p style="text-align:center;margin-bottom:32px;opacity:.9">
+      5 многоразовых пакетов в удобной сумке — начните менять привычки сегодня
+    </p>
+    <div class="form-container">
+      <form id="leadForm" novalidate>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="example@mail.ru" required>
+          <div class="error-msg" id="emailError">Введите корректный email</div>
+        </div>
+        <div class="form-group">
+          <label for="phone">Телефон</label>
+          <input type="tel" id="phone" name="phone" placeholder="+7 (999) 123-45-67" required>
+          <div class="error-msg" id="phoneError">Введите номер телефона (от 10 цифр)</div>
+        </div>
+        <button type="submit" class="btn btn-primary">Получить пробный набор</button>
+      </form>
+      <p class="form-note">Нажимая кнопку, вы соглашаетесь на обработку персональных данных</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>&copy; 2026 GreenLeaf Innovations. Все права защищены.</p>
+  </div>
+</footer>
+
+<div class="toast" id="toast">Спасибо! Мы свяжемся с вами в ближайшее время.</div>
+
+<script>
+  (function() {
+    const form = document.getElementById('leadForm');
+    const email = document.getElementById('email');
+    const phone = document.getElementById('phone');
+    const emailError = document.getElementById('emailError');
+    const phoneError = document.getElementById('phoneError');
+    const toast = document.getElementById('toast');
+
+    function validateEmail(v) {
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim());
+    }
+    function validatePhone(v) {
+      const digits = v.replace(/\D/g, '');
+      return digits.length >= 10;
+    }
+    function showError(input, errorEl) {
+      input.classList.add('error');
+      errorEl.classList.add('show');
+    }
+    function clearError(input, errorEl) {
+      input.classList.remove('error');
+      errorEl.classList.remove('show');
+    }
+
+    email.addEventListener('blur', function() {
+      if (this.value && !validateEmail(this.value)) showError(this, emailError);
+      else clearError(this, emailError);
+    });
+    email.addEventListener('input', function() {
+      if (this.classList.contains('error') && validateEmail(this.value)) clearError(this, emailError);
+    });
+    phone.addEventListener('blur', function() {
+      if (this.value && !validatePhone(this.value)) showError(this, phoneError);
+      else clearError(this, phoneError);
+    });
+    phone.addEventListener('input', function() {
+      if (this.classList.contains('error') && validatePhone(this.value)) clearError(this, phoneError);
+    });
+
+    function showToast() {
+      toast.classList.add('show');
+      setTimeout(function() { toast.classList.remove('show'); }, 3500);
+    }
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      let valid = true;
+
+      if (!validateEmail(email.value)) {
+        showError(email, emailError);
+        valid = false;
+      } else {
+        clearError(email, emailError);
+      }
+      if (!validatePhone(phone.value)) {
+        showError(phone, phoneError);
+        valid = false;
+      } else {
+        clearError(phone, phoneError);
+      }
+      if (!valid) return;
+
+      var submitBtn = form.querySelector('button[type="submit"]');
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Отправка…';
+
+      setTimeout(function() {
+        showToast();
+        form.reset();
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Получить пробный набор';
+      }, 800);
+    });
+  })();
+</script>
+
+</body>
+</html>
